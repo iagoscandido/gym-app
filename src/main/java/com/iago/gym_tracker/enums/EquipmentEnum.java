@@ -1,4 +1,4 @@
-package com.iago.gym_tracker;
+package com.iago.gym_tracker.enums;
 
 public enum EquipmentEnum {
     DUMBELL,
