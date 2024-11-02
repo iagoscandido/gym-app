@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
     @Table(name = "execution", schema = "public")
-public class ExecutionModel {
+public class ExecutionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -23,5 +23,5 @@ public class ExecutionModel {
     @Column(name = "rest_time", nullable = false)
     private Integer restTime;
     @ManyToOne
-    private ExerciseModel exercise;
+    private ExerciseEntity exercise;
 }
