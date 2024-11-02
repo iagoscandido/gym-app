@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres
+    container_name: db-gym_tracker
+    restart: always
+    ports:
+      - "5432:5432"
+    deploy:
+      resources:
+        limits:
+          memory: 1024M
+
+    environment:
+      POSTGRES_DB: "gym-tracker"
+      POSTGRES_USER: "admin"
+      POSTGRES_PASSWORD: "admin"
+    volumes:
+      - "./src/main/resources/sql/:/docker-entrypoint-initdb.d"
