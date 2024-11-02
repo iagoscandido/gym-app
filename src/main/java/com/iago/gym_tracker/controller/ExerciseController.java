@@ -1,7 +1,7 @@
 package com.iago.gym_tracker.controller;
 
 import com.iago.gym_tracker.dto.ExerciseDto;
-import com.iago.gym_tracker.model.ExerciseModel;
+import com.iago.gym_tracker.model.ExerciseEntity;
 import com.iago.gym_tracker.service.ExerciseService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class ExerciseController {
 
     @PostMapping("/")
     public Long createExercise(@Valid @RequestBody ExerciseDto requestBody) {
-        ExerciseModel exercise = service.create(requestBody);
+        ExerciseEntity exercise = service.create(requestBody);
         return exercise.getId();
     }
 }
